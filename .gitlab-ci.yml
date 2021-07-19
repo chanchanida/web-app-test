@@ -1,6 +1,6 @@
 stages:
   - build 
-  # - deploy
+  - deploy
 
 variables:
   GIT_USER_NAME: root
@@ -33,22 +33,22 @@ init-build:
   tags:
     - kmpsss
 
-# deploy-job:      # This job runs in the deploy stage.
-#   stage: deploy
-#   script:
-#     - echo "Deploying application..."
-#     - pwd
-#     - ls -al
-#     # Git
-#     - git config --global user.name "root"
-#     - git config --global user.email "root@demo.com"
-#     - echo "https://$GIT_USER_NAME:$GIT_OPS_REPO_PWD@$GIT_OPS_REPO/$OPS_PROJECT.git"
-#     - git clone --single-branch --branch main "https://$GIT_USER_NAME:$GIT_OPS_REPO_PWD@$GIT_OPS_REPO/$OPS_PROJECT.git"
-#     - cd "$OPS_PROJECT/$DEPLOY_TYPE"
-#     - kustomize edit set image $HARBOR_URL/$APP_IMG:v0.1
-# # ff
-#     - git commit -am "Update image tag" && git push origin main
-#     - echo "Application successfully deployed."
-#   tags : 
-#     - kmpw
+deploy-job:      # This job runs in the deploy stage.
+  stage: deploy
+  script:
+    - echo "Deploying application..."
+    - pwd
+    - ls -al
+    # Git
+    - git config --global user.name "root"
+    - git config --global user.email "root@demo.com"
+    - echo "https://$GIT_USER_NAME:$GIT_OPS_REPO_PWD@$GIT_OPS_REPO/$OPS_PROJECT.git"
+    - git clone --single-branch --branch main "https://$GIT_USER_NAME:$GIT_OPS_REPO_PWD@$GIT_OPS_REPO/$OPS_PROJECT.git"
+    - cd "$OPS_PROJECT/$DEPLOY_TYPE"
+    - kustomize edit set image $HARBOR_URL/$APP_IMG:v0.1
+# ff
+    - git commit -am "Update image tag" && git push origin main
+    - echo "Application successfully deployed."
+  tags : 
+    - kmpsss
 
