@@ -1,32 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: helloworldweb
+  name: hellowebtest
   creationTimestamp: null
   labels:
-    app: helloworldweb
+    app: hellowebtest
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: helloworldweb
+      app: hellowebtest
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: helloworldweb
-    # spec:
-    #   containers:
-    #   - image: nginx:1.14
-    #     name: nginx
-    #     ports:
-    #     - containerPort: 80
-    #     resources: {}
+        app: hellowebtest
     spec:
       containers:
-      - image: https://harbor.rocatdog.com/harbor/projects/4/repositories/test
-        name: demo-harbor
+      - image: harbor.rocatdog.com/web-app/test
+        name: webtestest
         ports:
         - containerPort: 80
         resources: {}
