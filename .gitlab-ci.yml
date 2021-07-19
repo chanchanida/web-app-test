@@ -31,7 +31,7 @@ init-build:
     - kustomize version 
     - echo "Build Succeeded..."
   tags:
-    - kmpsss
+    - localkmp
 
 # deploy-job:      # This job runs in the deploy stage.
 #   stage: deploy
