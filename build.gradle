@@ -20,6 +20,10 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+bootJar {
+    jar.enabled = true // 빌드시 jar 을 실행
+}
+
 test {
     useJUnitPlatform()
 }
