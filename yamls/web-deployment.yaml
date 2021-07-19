@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworldweb
+  creationTimestamp: null
+  labels:
+    app: helloworldweb
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: helloworldweb
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: helloworldweb
+    # spec:
+    #   containers:
+    #   - image: nginx:1.14
+    #     name: nginx
+    #     ports:
+    #     - containerPort: 80
+    #     resources: {}
+    spec:
+      containers:
+      - image: https://harbor.rocatdog.com/harbor/projects/4/repositories/test
+        name: demo-harbor
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
