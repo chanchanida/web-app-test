@@ -30,8 +30,8 @@ init-build:
     - docker images | grep harbor
     - kustomize version 
     - echo "Build Succeeded..."
-  # tags : 
-  #   - kmpw
+  tags:
+    - kmpw
 
 # deploy-job:      # This job runs in the deploy stage.
 #   stage: deploy
