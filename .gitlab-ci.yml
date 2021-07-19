@@ -26,7 +26,7 @@ init-build:
     - docker tag $HARBOR_URL/$APP_IMG $HARBOR_URL/$APP_IMG:v0.1
     - docker images | grep harbor
     - docker push $HARBOR_URL/$APP_IMG:v0.1
-    - docker rmi $HARBOR_URL/$APP_IMG:v0.1
+    - docker rmi $HARBOR_URL/$APP_IMG
     - docker images | grep harbor
     - kustomize version 
     - echo "Build Succeeded..."
