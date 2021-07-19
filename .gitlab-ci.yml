@@ -16,20 +16,20 @@ init-build:
   script:
     # 시작
     - echo "Building application..."
-    # - gradle --version
-    # - gradle build
-    # - echo "Gradle build Succeeded."
-    # - docker --version
-    # - docker login $HARBOR_URL -u admin -p $GIT_OPS_REPO_PWD
-    # - docker build -t $HARBOR_URL/$APP_IMG .
-    # - docker images | grep harbor
-    # - docker tag $HARBOR_URL/$APP_IMG $HARBOR_URL/$APP_IMG:v0.1
-    # - docker images | grep harbor
-    # - docker push $HARBOR_URL/$APP_IMG:v0.1
-    # - docker rmi $HARBOR_URL/$APP_IMG:v0.1
-    # - docker images | grep harbor
-    # - kustomize version 
-    # - echo "Build Succeeded..."
+    - gradle --version
+    - gradle build
+    - echo "Gradle build Succeeded."
+    - docker --version
+    - docker login $HARBOR_URL -u admin -p $GIT_OPS_REPO_PWD
+    - docker build -t $HARBOR_URL/$APP_IMG .
+    - docker images | grep harbor
+    - docker tag $HARBOR_URL/$APP_IMG $HARBOR_URL/$APP_IMG:v0.1
+    - docker images | grep harbor
+    - docker push $HARBOR_URL/$APP_IMG:v0.1
+    - docker rmi $HARBOR_URL/$APP_IMG:v0.1
+    - docker images | grep harbor
+    - kustomize version 
+    - echo "Build Succeeded..."
   tags:
     - kmpwebtest
 
