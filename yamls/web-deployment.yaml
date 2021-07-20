@@ -21,6 +21,6 @@ spec:
       - image: harbor.rocatdog.com/web-app/test
         name: webtestest
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         resources: {}
 status: {}
