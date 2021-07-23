@@ -3,10 +3,8 @@ package com.example.webdemoapi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import javax.servlet.ServletRequest;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import com.example.webdemoapi.RequestMain;
 
 @SpringBootApplication
 public class WebDemoApiApplication {
